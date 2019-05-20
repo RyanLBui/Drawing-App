@@ -187,7 +187,7 @@ function getPolygonPoints()
     // Y = mouseloc.x i radiusY * cos(angle)
     for(let i=0; i<polygonSides; i++)
     {
-        polygonPoints.push(new polygonPoints(loc.x + radiusX * Math.sin(angle), loc.y - radiusY * Math.cos(angle)));
+        polygonPoints.push(new PolygonPoint(loc.x + radiusX * Math.sin(angle), loc.y - radiusY * Math.cos(angle)));
         angle += 2 * Math.PI / polygonSides;
     }
     return polygonPoints;
