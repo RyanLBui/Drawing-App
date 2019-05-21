@@ -12,11 +12,8 @@
     <body>
         <div class="wrapper">
             <div class="toolbar">
-                <a class="selected" href="#" id="open" onclick="OpenImage()">
-                    <img src="images/open-icon.png">
-                </a>
-                <a href="#" id="save" onclick="SaveImage()">
-                    <img src="images/save-icon.png">
+                <a class="selected" href="#" id="delete" onclick="DeleteImage()">
+                    <img src="images/Trash-512_1_113x113.png">
                 </a>
                 <a href="#" id="brush" onclick="ChangeTool('brush')">
                     <img src="images/brush-icon.png">
@@ -36,13 +33,17 @@
                 <a href="#" id="polygon" onclick="ChangeTool('polygon')">
                     <img src="images/polygon-icon.png">
                 </a>
-            </div><br>
+            </div>
             
-            <canvas id="my-canvas" width="600" height="600"></canvas>
-            
-            <!--      Download Created Image     -->
-            <div id="img-data-div">
-                <a href="#" id="img-file" download="image.png">Download Image</a>
+            <div class="canvas">
+                <canvas id="my-canvas" width="600" height="600"></canvas>
+                
+                <a href="#" id="save" onclick="SaveImage()">
+                    <img src="images/save-icon.png">
+                </a>
+                <!--      Download Created Image     -->
+               
+                <a href="#" id="img-file" download="image.png">Download Saved Image</a>
             </div>
             
         </div>

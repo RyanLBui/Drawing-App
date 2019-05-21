@@ -16,7 +16,8 @@
 .toolbar a
 {
     float: left;
-    width: 11%;
+/*    width: 15%;*/
+    display: flex;
     text-align: center;
     padding: 6px 5px;
     transition: all 0.5s ease;
@@ -25,6 +26,12 @@
 .toolbar a:hover
 {
     background-color: black;
+}
+
+.toolbar a .selected img
+{
+    width: 10px;
+    height: 10px;
 }
 
 .selected
@@ -38,11 +45,25 @@
     border: 3px solid black;
 }
 
-#img-data-div
+.canvas a
 {
-    width: 100%;
-    max-width: 900px;
-    height: 200px;
+    display: block;
+    width: 100px;
+    margin: auto;
+}
+
+.canvas a img
+{
+    background-color: grey;
+    display: block;
+    width: 100px;
+    margin: auto;
+}
+
+.canvas #img-file
+{
+    text-align: center;
+    margin-top: 1rem;
 }
 
 .toolbar a img

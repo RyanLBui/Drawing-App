@@ -6,7 +6,7 @@ let strokeColor = 'black';
 let fillcolor = 'black';
 let line_Width = 2;
 let polygonSides = 6;
-let currentTool = 'brush';
+let currentTool = 'delete';
 let canvasWidth = 600;
 let canvasHeight = 600;
 
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', setupCanvas);
 
 function setupCanvas()
 {
-    canvas = document.getElementById('my-canvas');
+    canvas = document.getElementById("my-canvas");
     ctx = canvas.getContext('2d');
     ctx.strokeStyle = strokeColor;
     ctx.lineWidth = line_Width;
@@ -73,7 +73,7 @@ function setupCanvas()
 
 function ChangeTool(toolClicked)
 {
-    document.getElementById("open").className = "";
+    document.getElementById("delete").className = "";
     document.getElementById("save").className = "";
     document.getElementById("brush").className = "";
     document.getElementById("line").className = "";
@@ -272,7 +272,6 @@ function DrawBrush()
         ctx.lineTo(brushXPoints[i], brushYPoints[i]);
         ctx.closePath();
         ctx.stroke();
-        
     }
 }
 
@@ -347,16 +346,10 @@ function SaveImage()
     imageFile.setAttribute('href', canvas.toDataURL());
 }
 
-// open image
-function OpenImage()
+// delete image
+function DeleteImage()
 {
-    let img = new Image();
-    img.onload = function()
-    {
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        ctx.drawImage(img, 0,0);
-    }
-    img.src = 'image.png';
+    window.location.reload();
 }
 
 
