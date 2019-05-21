@@ -238,7 +238,7 @@ function drawRubberbandShape(loc)
         let radiusX = shapeBoundingBox.width / 2;
         let radiusY = shapeBoundingBox.height / 2;
         ctx.beginPath();
-        ctx.ellipse(mousedown.x, mousedown.y, radiusX, radiusY, Math.PI / 4, 0, Math.PI * 2);
+        ctx.ellipse(mousedown.x, mousedown.y, radiusX, radiusY, 0, 0, Math.PI * 2);
         ctx.stroke();
     }
     else if (currentTool === "polygon")
