@@ -66,6 +66,7 @@ function setupCanvas()
     ctx = canvas.getContext('2d');
     ctx.strokeStyle = strokeColor;
     ctx.lineWidth = line_Width;
+    
     canvas.addEventListener("mousedown", ReactToMouseDown);
     canvas.addEventListener("mousemove", ReactToMouseMove);
     canvas.addEventListener("mouseup", ReactToMouseUp);
@@ -75,6 +76,7 @@ function ChangeTool(toolClicked)
 {
     document.getElementById("delete").className = "";
     document.getElementById("save").className = "";
+    document.getElementById("image").className = "";
     document.getElementById("brush").className = "";
     document.getElementById("line").className = "";
     document.getElementById("rectangle").className = "";
@@ -298,6 +300,13 @@ function ReactToMouseDown(e)
     {
         usingBrush = true;
         AddBrushPoint(loc.x, loc.y);
+    }
+    else if(currentTool === 'image')
+    {
+        var img = document.getElementById("picture");
+        ctx.drawImage(img, loc.x-50, loc.y-50);
+        SaveCanvasImage();
+        RedrawCanvasImage();
     }
 };
 
